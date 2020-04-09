@@ -1,15 +1,22 @@
 PODS:
-  - NFSpotifyAuth (0.1.0)
+  - Alamofire (4.9.1)
+  - NFSpotifyAuth (0.1.0):
+    - Alamofire
 
 DEPENDENCIES:
   - NFSpotifyAuth (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
 
 EXTERNAL SOURCES:
   NFSpotifyAuth:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NFSpotifyAuth: 183867a4e6a0d2b4ad757856e18a4b0ec0f12669
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  NFSpotifyAuth: b91893e3995c6e9c84b589afbc38b6f701b7549d
 
 PODFILE CHECKSUM: 5953448f1cd03a39e07aafed0ba85b3fc547cde4
 
