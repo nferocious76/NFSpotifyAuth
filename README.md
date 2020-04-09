@@ -9,21 +9,38 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Features
+
+- [x] Spotify Authentication using WebOAuth
+
 ## Requirements
+
+- iOS 13.0+
+- Xcode 11.0+
 
 ## Installation
 
-NFSpotifyAuth is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+#### CocoaPods
+NFSpotifyAuth is available through [CocoaPods](http://cocoapods.org/). To install `NFSpotifyAuth`, simply add the following line to your `Podfile`:
 
 ```ruby
 pod 'NFSpotifyAuth'
 ```
 
+#### Manually
+1. Download and drop ```/Pod/Classes```folder in your project.  
+2. Congratulations!  
+
+## Usage
+
+```
+TODO: - add usage
+```
+
 ## Author
 
-nferocious76, nferocious76@gmail.com
+Neil Francis Ramirez Hipona, nferocious76@gmail.com
 
 ## License
 
-NFSpotifyAuth is available under the MIT license. See the LICENSE file for more info.
+NFSpotifyAuth is available under the MIT license. See the [LICENSE](https://github.com/nferocious76/NFSpotifyAuth/blob/master/LICENSE) file for more info.

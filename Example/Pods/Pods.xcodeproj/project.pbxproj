@@ -1,0 +1,787 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23C09BAFEF5E108FD91D1454D9660E14 /* Pods-NFSpotifyAuth_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35E10116D86960693DEC6B111CD21D16 /* Pods-NFSpotifyAuth_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B0AF0CBEE0AB1EA53CEA4C24A4E46ED /* Pods-NFSpotifyAuth_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DEF487E86E2A0FAEDE001D4BA3993F2 /* Pods-NFSpotifyAuth_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B96F356E3EAA5B19FD786B45BFD304B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		815FBB0EC589284935C8229379F53E28 /* Pods-NFSpotifyAuth_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5A02AABDBFEC0832527855C132FA3 /* Pods-NFSpotifyAuth_Example-dummy.m */; };
+		9EE452989DD1B2AAEC0BAA11AE7BDA35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		B8701965694ECDC19D7CBC921F8B455D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D11BE078109FB5916302A63A7C8998AA /* Pods-NFSpotifyAuth_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C02070100C56187D6A1BB7ECE21C757 /* Pods-NFSpotifyAuth_Tests-dummy.m */; };
+		D67262D4A6A28AA3A6FC68A8DB5E9484 /* NFSpotifyAuth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D73BAAE69FE096A47D2F0450CFD728F /* NFSpotifyAuth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5C07EED243F20A80005C493 /* NFSpotifyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EEC243F20A80005C493 /* NFSpotifyConstant.swift */; };
+		F5C07EEF243F20CB0005C493 /* NFSpotifyLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EEE243F20CB0005C493 /* NFSpotifyLoginView.swift */; };
+		F5C07EF1243F20E10005C493 /* NFSpotifyOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EF0243F20E10005C493 /* NFSpotifyOAuth.swift */; };
+		F5C07EF3243F20F40005C493 /* NFSpotifyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EF2243F20F40005C493 /* NFSpotifyProfile.swift */; };
+		F5C07EF5243F21350005C493 /* NFSpotifyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EF4243F21350005C493 /* NFSpotifyToken.swift */; };
+		FE433B7441384444737E2F89205089F5 /* NFSpotifyAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C843B65F89DA4546E1E2F183F8275D /* NFSpotifyAuth-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03B197FE4333B9E13EB80366CA24EE14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C112A6479D2AEFB1AD3A1DCDD421847;
+			remoteInfo = "Pods-NFSpotifyAuth_Example";
+		};
+		15029CA39C7847AD601BB344E0430EF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68A1F948437677ECB5D6114AE9918EF7;
+			remoteInfo = NFSpotifyAuth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B5A02AABDBFEC0832527855C132FA3 /* Pods-NFSpotifyAuth_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NFSpotifyAuth_Example-dummy.m"; sourceTree = "<group>"; };
+		051F31CA574A684D0D8D0CEAFE6ACC62 /* Pods-NFSpotifyAuth_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NFSpotifyAuth_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		14EDEB63EC1F4B4EB90E5F1683930A9B /* Pods_NFSpotifyAuth_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuth_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B2F58A33B6187886FBE43877F9AF24 /* NFSpotifyAuth-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NFSpotifyAuth-Info.plist"; sourceTree = "<group>"; };
+		1C02070100C56187D6A1BB7ECE21C757 /* Pods-NFSpotifyAuth_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NFSpotifyAuth_Tests-dummy.m"; sourceTree = "<group>"; };
+		21CCA8D1AE764145E29FCC71E936BADB /* Pods-NFSpotifyAuth_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NFSpotifyAuth_Tests.modulemap"; sourceTree = "<group>"; };
+		26ED9AD1168F61A17C38034E03B0F3F4 /* NFSpotifyAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFSpotifyAuth.release.xcconfig; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		35E10116D86960693DEC6B111CD21D16 /* Pods-NFSpotifyAuth_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NFSpotifyAuth_Example-umbrella.h"; sourceTree = "<group>"; };
+		3BE5DF462184353F773F7BF20543F1DD /* Pods-NFSpotifyAuth_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NFSpotifyAuth_Example.modulemap"; sourceTree = "<group>"; };
+		46D534F0C85ED1436471C2512F89D329 /* NFSpotifyAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NFSpotifyAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC0D5FA7A286A017E9BD4718326BBAF /* Pods-NFSpotifyAuth_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuth_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4DAEDF2D18A54D4A195D568D7C456CCA /* Pods-NFSpotifyAuth_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NFSpotifyAuth_Example-frameworks.sh"; sourceTree = "<group>"; };
+		5DEF487E86E2A0FAEDE001D4BA3993F2 /* Pods-NFSpotifyAuth_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NFSpotifyAuth_Tests-umbrella.h"; sourceTree = "<group>"; };
+		5E07B9DE88722DE7ACF1F2FFF29122B3 /* Pods-NFSpotifyAuth_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuth_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6DCCF99FC96AD6E937B58DBAD687D6CA /* Pods-NFSpotifyAuth_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Example-Info.plist"; sourceTree = "<group>"; };
+		718C294EB3AAEE742C76EE4AFB5881BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7729104D7CAA62C54B1662E9B5ED6F64 /* Pods-NFSpotifyAuth_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NFSpotifyAuth_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7AA87405F35A9A6E49DC21D6F23A08E9 /* NFSpotifyAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFSpotifyAuth.debug.xcconfig; sourceTree = "<group>"; };
+		7D73BAAE69FE096A47D2F0450CFD728F /* NFSpotifyAuth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFSpotifyAuth-umbrella.h"; sourceTree = "<group>"; };
+		7EA050CB158FB2C98DB31912EF996BBA /* Pods-NFSpotifyAuth_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Tests-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A4B765A6B7E8D0C7B5D37C9945FF6501 /* Pods-NFSpotifyAuth_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuth_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B72A3A302B7DA79486B1EFE09D026D64 /* NFSpotifyAuth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NFSpotifyAuth.modulemap; sourceTree = "<group>"; };
+		BE42AA8AEAE772C03A109C3321EA89A7 /* NFSpotifyAuth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = NFSpotifyAuth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D8FA1CDD416F57C47B271048BDEF590E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E2109581CAE96E646B81EBAA1A0D8DAB /* Pods-NFSpotifyAuth_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NFSpotifyAuth_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F3C0360E2818CD9E1B187F5095BD14C9 /* Pods-NFSpotifyAuth_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F5C07EEC243F20A80005C493 /* NFSpotifyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyConstant.swift; path = NFSpotifyAuth/Classes/NFSpotifyConstant.swift; sourceTree = "<group>"; };
+		F5C07EEE243F20CB0005C493 /* NFSpotifyLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyLoginView.swift; path = NFSpotifyAuth/Classes/NFSpotifyLoginView.swift; sourceTree = "<group>"; };
+		F5C07EF0243F20E10005C493 /* NFSpotifyOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyOAuth.swift; path = NFSpotifyAuth/Classes/NFSpotifyOAuth.swift; sourceTree = "<group>"; };
+		F5C07EF2243F20F40005C493 /* NFSpotifyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyProfile.swift; path = NFSpotifyAuth/Classes/NFSpotifyProfile.swift; sourceTree = "<group>"; };
+		F5C07EF4243F21350005C493 /* NFSpotifyToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyToken.swift; path = NFSpotifyAuth/Classes/NFSpotifyToken.swift; sourceTree = "<group>"; };
+		F61FF63DBFF70D7859E3000AB1164FDB /* Pods-NFSpotifyAuth_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F9C843B65F89DA4546E1E2F183F8275D /* NFSpotifyAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NFSpotifyAuth-dummy.m"; sourceTree = "<group>"; };
+		FEC5C09CF7D2177DA1D097D215596585 /* NFSpotifyAuth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFSpotifyAuth-prefix.pch"; sourceTree = "<group>"; };
+		FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuth_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C3C65083AC82006C2058DB12D34E4B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8701965694ECDC19D7CBC921F8B455D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F8D15972D4DDC41961A6D9319BF0C12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B96F356E3EAA5B19FD786B45BFD304B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3A50E206F6C62B4986F90F8FC6A71C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EE452989DD1B2AAEC0BAA11AE7BDA35 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1154E77DD975608D69CB237CDC5BFA84 /* Pods-NFSpotifyAuth_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				21CCA8D1AE764145E29FCC71E936BADB /* Pods-NFSpotifyAuth_Tests.modulemap */,
+				051F31CA574A684D0D8D0CEAFE6ACC62 /* Pods-NFSpotifyAuth_Tests-acknowledgements.markdown */,
+				F3C0360E2818CD9E1B187F5095BD14C9 /* Pods-NFSpotifyAuth_Tests-acknowledgements.plist */,
+				1C02070100C56187D6A1BB7ECE21C757 /* Pods-NFSpotifyAuth_Tests-dummy.m */,
+				7EA050CB158FB2C98DB31912EF996BBA /* Pods-NFSpotifyAuth_Tests-Info.plist */,
+				5DEF487E86E2A0FAEDE001D4BA3993F2 /* Pods-NFSpotifyAuth_Tests-umbrella.h */,
+				5E07B9DE88722DE7ACF1F2FFF29122B3 /* Pods-NFSpotifyAuth_Tests.debug.xcconfig */,
+				4AC0D5FA7A286A017E9BD4718326BBAF /* Pods-NFSpotifyAuth_Tests.release.xcconfig */,
+			);
+			name = "Pods-NFSpotifyAuth_Tests";
+			path = "Target Support Files/Pods-NFSpotifyAuth_Tests";
+			sourceTree = "<group>";
+		};
+		1DD3D32D7974AA917F3F2E332B2A6289 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B385EA4B1550EDD0DF4BFBC9401407F6 /* NFSpotifyAuth */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		5974E2BF3BC7735B9319E511827A89CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46D534F0C85ED1436471C2512F89D329 /* NFSpotifyAuth.framework */,
+				FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */,
+				14EDEB63EC1F4B4EB90E5F1683930A9B /* Pods_NFSpotifyAuth_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		617C16D121FE1B8BFF999E7EE2C2B0F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B72A3A302B7DA79486B1EFE09D026D64 /* NFSpotifyAuth.modulemap */,
+				F9C843B65F89DA4546E1E2F183F8275D /* NFSpotifyAuth-dummy.m */,
+				17B2F58A33B6187886FBE43877F9AF24 /* NFSpotifyAuth-Info.plist */,
+				FEC5C09CF7D2177DA1D097D215596585 /* NFSpotifyAuth-prefix.pch */,
+				7D73BAAE69FE096A47D2F0450CFD728F /* NFSpotifyAuth-umbrella.h */,
+				7AA87405F35A9A6E49DC21D6F23A08E9 /* NFSpotifyAuth.debug.xcconfig */,
+				26ED9AD1168F61A17C38034E03B0F3F4 /* NFSpotifyAuth.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/NFSpotifyAuth";
+			sourceTree = "<group>";
+		};
+		7793FE07512F6CFC14A461CDDADB5B87 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5F9D41A9373DB4A2BB8A27A6BBE31C5 /* Pods-NFSpotifyAuth_Example */,
+				1154E77DD975608D69CB237CDC5BFA84 /* Pods-NFSpotifyAuth_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B385EA4B1550EDD0DF4BFBC9401407F6 /* NFSpotifyAuth */ = {
+			isa = PBXGroup;
+			children = (
+				F5C07EEC243F20A80005C493 /* NFSpotifyConstant.swift */,
+				F5C07EEE243F20CB0005C493 /* NFSpotifyLoginView.swift */,
+				F5C07EF0243F20E10005C493 /* NFSpotifyOAuth.swift */,
+				F5C07EF2243F20F40005C493 /* NFSpotifyProfile.swift */,
+				F5C07EF4243F21350005C493 /* NFSpotifyToken.swift */,
+				D2345EF462AF22110A758C3BB3F18245 /* Pod */,
+				617C16D121FE1B8BFF999E7EE2C2B0F5 /* Support Files */,
+			);
+			name = NFSpotifyAuth;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1DD3D32D7974AA917F3F2E332B2A6289 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				5974E2BF3BC7735B9319E511827A89CC /* Products */,
+				7793FE07512F6CFC14A461CDDADB5B87 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2345EF462AF22110A758C3BB3F18245 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				718C294EB3AAEE742C76EE4AFB5881BA /* LICENSE */,
+				BE42AA8AEAE772C03A109C3321EA89A7 /* NFSpotifyAuth.podspec */,
+				D8FA1CDD416F57C47B271048BDEF590E /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		E5F9D41A9373DB4A2BB8A27A6BBE31C5 /* Pods-NFSpotifyAuth_Example */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5DF462184353F773F7BF20543F1DD /* Pods-NFSpotifyAuth_Example.modulemap */,
+				7729104D7CAA62C54B1662E9B5ED6F64 /* Pods-NFSpotifyAuth_Example-acknowledgements.markdown */,
+				F61FF63DBFF70D7859E3000AB1164FDB /* Pods-NFSpotifyAuth_Example-acknowledgements.plist */,
+				00B5A02AABDBFEC0832527855C132FA3 /* Pods-NFSpotifyAuth_Example-dummy.m */,
+				4DAEDF2D18A54D4A195D568D7C456CCA /* Pods-NFSpotifyAuth_Example-frameworks.sh */,
+				6DCCF99FC96AD6E937B58DBAD687D6CA /* Pods-NFSpotifyAuth_Example-Info.plist */,
+				35E10116D86960693DEC6B111CD21D16 /* Pods-NFSpotifyAuth_Example-umbrella.h */,
+				E2109581CAE96E646B81EBAA1A0D8DAB /* Pods-NFSpotifyAuth_Example.debug.xcconfig */,
+				A4B765A6B7E8D0C7B5D37C9945FF6501 /* Pods-NFSpotifyAuth_Example.release.xcconfig */,
+			);
+			name = "Pods-NFSpotifyAuth_Example";
+			path = "Target Support Files/Pods-NFSpotifyAuth_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		994F1CF5181BD633600236122F443929 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67262D4A6A28AA3A6FC68A8DB5E9484 /* NFSpotifyAuth-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6463437F228A5BA283D49464E246D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C09BAFEF5E108FD91D1454D9660E14 /* Pods-NFSpotifyAuth_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E30763C606E302073047663B69661DB0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B0AF0CBEE0AB1EA53CEA4C24A4E46ED /* Pods-NFSpotifyAuth_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C112A6479D2AEFB1AD3A1DCDD421847 /* Pods-NFSpotifyAuth_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A2FA98FB90AA61A3CB945B300A8933F /* Build configuration list for PBXNativeTarget "Pods-NFSpotifyAuth_Example" */;
+			buildPhases = (
+				CB6463437F228A5BA283D49464E246D5 /* Headers */,
+				E7BAE111F2D754E0AEE515425B9F9FBB /* Sources */,
+				6F8D15972D4DDC41961A6D9319BF0C12 /* Frameworks */,
+				B7E63DDFD331503BDD4F737AE5F7AB66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				278B7315A467D2200F01B69B9C183CC9 /* PBXTargetDependency */,
+			);
+			name = "Pods-NFSpotifyAuth_Example";
+			productName = "Pods-NFSpotifyAuth_Example";
+			productReference = FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		68A1F948437677ECB5D6114AE9918EF7 /* NFSpotifyAuth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8A4D72D20CC01AF9DE384C66A6F426 /* Build configuration list for PBXNativeTarget "NFSpotifyAuth" */;
+			buildPhases = (
+				994F1CF5181BD633600236122F443929 /* Headers */,
+				7AD687423EC4BFE5DB04B08864214D4E /* Sources */,
+				2C3C65083AC82006C2058DB12D34E4B6 /* Frameworks */,
+				1557D6C0E5E5E4E008BB854EEADF9742 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NFSpotifyAuth;
+			productName = NFSpotifyAuth;
+			productReference = 46D534F0C85ED1436471C2512F89D329 /* NFSpotifyAuth.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C3F4E4112AD02C823B93623565932BED /* Pods-NFSpotifyAuth_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583CE9E340C25469D2A2493E957C4DD3 /* Build configuration list for PBXNativeTarget "Pods-NFSpotifyAuth_Tests" */;
+			buildPhases = (
+				E30763C606E302073047663B69661DB0 /* Headers */,
+				EEA6E69D7D6694B32FB4CA240FD5DA2F /* Sources */,
+				D3A50E206F6C62B4986F90F8FC6A71C4 /* Frameworks */,
+				3744702E18910C18A672EF918A1924DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F5E139254570E20EF8A5A9921E3D5AC /* PBXTargetDependency */,
+			);
+			name = "Pods-NFSpotifyAuth_Tests";
+			productName = "Pods-NFSpotifyAuth_Tests";
+			productReference = 14EDEB63EC1F4B4EB90E5F1683930A9B /* Pods_NFSpotifyAuth_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 5974E2BF3BC7735B9319E511827A89CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68A1F948437677ECB5D6114AE9918EF7 /* NFSpotifyAuth */,
+				1C112A6479D2AEFB1AD3A1DCDD421847 /* Pods-NFSpotifyAuth_Example */,
+				C3F4E4112AD02C823B93623565932BED /* Pods-NFSpotifyAuth_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1557D6C0E5E5E4E008BB854EEADF9742 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3744702E18910C18A672EF918A1924DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7E63DDFD331503BDD4F737AE5F7AB66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AD687423EC4BFE5DB04B08864214D4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C07EF5243F21350005C493 /* NFSpotifyToken.swift in Sources */,
+				FE433B7441384444737E2F89205089F5 /* NFSpotifyAuth-dummy.m in Sources */,
+				F5C07EEF243F20CB0005C493 /* NFSpotifyLoginView.swift in Sources */,
+				F5C07EF3243F20F40005C493 /* NFSpotifyProfile.swift in Sources */,
+				F5C07EF1243F20E10005C493 /* NFSpotifyOAuth.swift in Sources */,
+				F5C07EED243F20A80005C493 /* NFSpotifyConstant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7BAE111F2D754E0AEE515425B9F9FBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				815FBB0EC589284935C8229379F53E28 /* Pods-NFSpotifyAuth_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEA6E69D7D6694B32FB4CA240FD5DA2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D11BE078109FB5916302A63A7C8998AA /* Pods-NFSpotifyAuth_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		278B7315A467D2200F01B69B9C183CC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NFSpotifyAuth;
+			target = 68A1F948437677ECB5D6114AE9918EF7 /* NFSpotifyAuth */;
+			targetProxy = 15029CA39C7847AD601BB344E0430EF3 /* PBXContainerItemProxy */;
+		};
+		2F5E139254570E20EF8A5A9921E3D5AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-NFSpotifyAuth_Example";
+			target = 1C112A6479D2AEFB1AD3A1DCDD421847 /* Pods-NFSpotifyAuth_Example */;
+			targetProxy = 03B197FE4333B9E13EB80366CA24EE14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A4B2F5EA16956195F8E8DBE2D77B5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2109581CAE96E646B81EBAA1A0D8DAB /* Pods-NFSpotifyAuth_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NFSpotifyAuth_Example/Pods-NFSpotifyAuth_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NFSpotifyAuth_Example/Pods-NFSpotifyAuth_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		36E68BE8494D9B1F6C4A5C11C1C12BD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B765A6B7E8D0C7B5D37C9945FF6501 /* Pods-NFSpotifyAuth_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NFSpotifyAuth_Example/Pods-NFSpotifyAuth_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NFSpotifyAuth_Example/Pods-NFSpotifyAuth_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		85A42178526DAB08FF654B9DFA53C6C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26ED9AD1168F61A17C38034E03B0F3F4 /* NFSpotifyAuth.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NFSpotifyAuth/NFSpotifyAuth-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NFSpotifyAuth/NFSpotifyAuth-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NFSpotifyAuth/NFSpotifyAuth.modulemap";
+				PRODUCT_MODULE_NAME = NFSpotifyAuth;
+				PRODUCT_NAME = NFSpotifyAuth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E19499A42D46E9A1C30D82D1DDD820D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA87405F35A9A6E49DC21D6F23A08E9 /* NFSpotifyAuth.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NFSpotifyAuth/NFSpotifyAuth-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NFSpotifyAuth/NFSpotifyAuth-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NFSpotifyAuth/NFSpotifyAuth.modulemap";
+				PRODUCT_MODULE_NAME = NFSpotifyAuth;
+				PRODUCT_NAME = NFSpotifyAuth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C183EAB849E5E9DF2CAA35375FB2EB95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E07B9DE88722DE7ACF1F2FFF29122B3 /* Pods-NFSpotifyAuth_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NFSpotifyAuth_Tests/Pods-NFSpotifyAuth_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NFSpotifyAuth_Tests/Pods-NFSpotifyAuth_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C50DCE9786D6014419A9CD15A8F526E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AC0D5FA7A286A017E9BD4718326BBAF /* Pods-NFSpotifyAuth_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NFSpotifyAuth_Tests/Pods-NFSpotifyAuth_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NFSpotifyAuth_Tests/Pods-NFSpotifyAuth_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A2FA98FB90AA61A3CB945B300A8933F /* Build configuration list for PBXNativeTarget "Pods-NFSpotifyAuth_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4B2F5EA16956195F8E8DBE2D77B5FD /* Debug */,
+				36E68BE8494D9B1F6C4A5C11C1C12BD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
+				B0087CB4594321EF41619F3181FE120E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		583CE9E340C25469D2A2493E957C4DD3 /* Build configuration list for PBXNativeTarget "Pods-NFSpotifyAuth_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C183EAB849E5E9DF2CAA35375FB2EB95 /* Debug */,
+				C50DCE9786D6014419A9CD15A8F526E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F8A4D72D20CC01AF9DE384C66A6F426 /* Build configuration list for PBXNativeTarget "NFSpotifyAuth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E19499A42D46E9A1C30D82D1DDD820D /* Debug */,
+				85A42178526DAB08FF654B9DFA53C6C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -1,0 +1,16 @@
+PODS:
+  - NFSpotifyAuth (0.1.0)
+
+DEPENDENCIES:
+  - NFSpotifyAuth (from `../`)
+
+EXTERNAL SOURCES:
+  NFSpotifyAuth:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NFSpotifyAuth: 183867a4e6a0d2b4ad757856e18a4b0ec0f12669
+
+PODFILE CHECKSUM: 5953448f1cd03a39e07aafed0ba85b3fc547cde4
+
+COCOAPODS: 1.9.1
