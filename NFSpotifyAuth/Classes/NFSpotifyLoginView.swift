@@ -53,8 +53,7 @@ public class NFSpotifyLoginView: UIView {
 
     override public func awakeFromNib() {
         super.awakeFromNib()
-        
-        backgroundColor = .clear
+
     }
     
     convenience public init(frame: CGRect, scopes s: [String] = NFSpotifyAvailableScopes, delegate d: NFSpotifyLoginViewDelegate) {
@@ -91,20 +90,20 @@ extension NFSpotifyLoginView {
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = wkUController
         
-        let webFrame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        let webFrame = CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4)
         wkWebView = WKWebView(frame: webFrame, configuration: configuration)
         addSubview(wkWebView)
         
+        wkWebView.navigationDelegate = self
         wkWebView.layer.cornerRadius = cornerRadius
-        
         pinViewToSelf(view: wkWebView)
         
-        wkWebView.navigationDelegate = self
+        setStatusColor(color: NFSpotifyAuthDefault) // default
     }
     
     fileprivate func prepareCloseButton(withBaseFrame frame: CGRect) {
         
-        let buttonFrame = CGRect(x: frame.width - 32, y: 0, width: 32, height: 32)
+        let buttonFrame = CGRect(x: frame.width - 34, y: 2, width: 32, height: 32)
         let closeButton = UIButton(frame: buttonFrame)
         
         let bundle = Bundle(for: NFSpotifyLoginView.self)
@@ -186,7 +185,7 @@ extension NFSpotifyLoginView {
 // MARK: - Animation
 
 extension NFSpotifyLoginView {
-    
+
     public func show(isAnimated: Bool = true) {
         isHidden = false
         transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
@@ -209,6 +208,11 @@ extension NFSpotifyLoginView {
 // MARK: - Controls
 
 extension NFSpotifyLoginView {
+    
+    private func setStatusColor(color: UIColor) {
+        
+        backgroundColor = color
+    }
     
     @objc func closeButtonAction(_ sender: UIButton) {
         
@@ -233,28 +237,37 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
         
         guard let url = webView.url else {
             let error = NFSpotifyOAuth.createCustomError(errorMessage: "No valid address")
+            
+            setStatusColor(color: NFSpotifyAuthWarning)
             return delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
         guard let queryString = url.query else {
             let error = NFSpotifyOAuth.createCustomError(errorMessage: "No generated access code")
+            
+            setStatusColor(color: NFSpotifyAuthWarning)
             return self.delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
         let components = queryString.components(separatedBy: "=")
         guard let accessCode = components.last else {
             let error = NFSpotifyOAuth.createCustomError(errorMessage: "No generated access code")
+            
+            setStatusColor(color: NFSpotifyAuthWarning)
             return self.delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
         NFSpotifyOAuth.shared.accessTokenFromAccessCode(accessCode) { (tokenObject, error) in
             
             if let tokenObject = tokenObject, let _ = tokenObject.token {
+                self.setStatusColor(color: NFSpotifyAuthSuccess)
                 self.delegate.spotifyLoginView(self, didLoginWithTokenObject: tokenObject)
             }else if let error = error {
+                self.setStatusColor(color: NFSpotifyAuthError)
                 self.delegate.spotifyLoginView(self, didFailWithError: error)
             }else{
                 let error = NFSpotifyOAuth.createCustomError(errorMessage: "Unkown error")
+                self.setStatusColor(color: NFSpotifyAuthError)
                 self.delegate.spotifyLoginView(self, didFailWithError: error)
             }
         }

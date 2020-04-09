@@ -54,3 +54,17 @@ public let NFSpotifyAvailableScopes: [String] = [
     "user-follow-read",
     "user-follow-modify"
 ]
+
+// MARK: - Color Legends
+
+/// Default status
+public let NFSpotifyAuthDefault = UIColor.gray
+
+/// Warning status
+public let NFSpotifyAuthWarning = UIColor.orange
+
+/// Error status
+public let NFSpotifyAuthError = UIColor.red
+
+/// Success status
+public let NFSpotifyAuthSuccess = UIColor.green

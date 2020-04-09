@@ -23,7 +23,7 @@ class ViewController: UIViewController, NFSpotifyLoginViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         
         NFSpotifyOAuth.shared.set(clientId: SpotifyClientID, clientSecret: SpotifyClientSecret, redirectURI: SpotifyCallbackURI)
 
