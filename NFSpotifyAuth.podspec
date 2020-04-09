@@ -32,9 +32,7 @@ Spotify Authenticator using WebOAuth that won't require SDK. Authentication conf
   s.swift_version = "5.0"
   s.source_files = 'NFSpotifyAuth/Classes/**/*'
   
-  s.resource_bundles = {
-    'NFSpotifyAuth' => ['NFSpotifyAuth/Assets/**/*.png']
-  }
+  s.resources = 'NFSpotifyAuth/Assets/**'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

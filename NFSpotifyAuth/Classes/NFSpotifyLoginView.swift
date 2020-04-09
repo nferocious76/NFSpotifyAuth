@@ -104,9 +104,13 @@ extension NFSpotifyLoginView {
     
     fileprivate func prepareCloseButton(withBaseFrame frame: CGRect) {
         
-        let buttonFrame = CGRect(x: frame.width - 20, y: 0, width: 32, height: 32)
+        let buttonFrame = CGRect(x: frame.width - 32, y: 0, width: 32, height: 32)
         let closeButton = UIButton(frame: buttonFrame)
-        closeButton.setImage(#imageLiteral(resourceName: "close"), for: .normal)
+        
+        let bundle = Bundle(for: NFSpotifyLoginView.self)
+        let image = UIImage(named: "close", in: bundle, with: .none) // #imageLiteral(resourceName: "close")
+        closeButton.setImage(image, for: .normal)
+        
         addSubview(closeButton)
         
         let top = NSLayoutConstraint(item: closeButton, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
