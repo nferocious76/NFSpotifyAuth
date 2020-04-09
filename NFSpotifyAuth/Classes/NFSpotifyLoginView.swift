@@ -27,6 +27,7 @@ public class NFSpotifyLoginView: UIView {
     public var animationDuration: TimeInterval = 0.33
     public var cornerRadius: CGFloat = 4.0 {
         didSet {
+            layer.cornerRadius = cornerRadius
             wkWebView.layer.cornerRadius = cornerRadius
         }
     }
@@ -36,6 +37,9 @@ public class NFSpotifyLoginView: UIView {
     private
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -100,8 +104,9 @@ extension NFSpotifyLoginView {
     
     fileprivate func prepareCloseButton(withBaseFrame frame: CGRect) {
         
-        let buttonFrame = CGRect(x: frame.width - 20, y: 0, width: 20, height: 20)
+        let buttonFrame = CGRect(x: frame.width - 20, y: 0, width: 32, height: 32)
         let closeButton = UIButton(frame: buttonFrame)
+        closeButton.setImage(#imageLiteral(resourceName: "close"), for: .normal)
         addSubview(closeButton)
         
         let top = NSLayoutConstraint(item: closeButton, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
@@ -114,7 +119,8 @@ extension NFSpotifyLoginView {
         
         closeButton.addConstraints([width, height])
         
-        closeButton.backgroundColor = .green // Temp
+        closeButton.clipsToBounds = true
+        closeButton.backgroundColor = .clear
         closeButton.addTarget(self, action: #selector(self.closeButtonAction(_:)), for: .touchUpInside)
     }
     
