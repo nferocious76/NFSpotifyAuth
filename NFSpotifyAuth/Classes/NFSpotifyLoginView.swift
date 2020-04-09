@@ -68,10 +68,11 @@ public class NFSpotifyLoginView: UIView {
         prepareWebLoginView(withFrame: frame)
         prepareCloseButton(withBaseFrame: frame)
         
+        /*
         guard let redirectURI = NFSpotifyOAuth.shared.redirectURI else { return }
         guard let accessCodeAuthURL = accessCodeRequestOAuthURL(forRedirectURI: redirectURI) else { return }
         
-        loadURL(url: accessCodeAuthURL)
+        loadURL(url: accessCodeAuthURL)*/
     }
 }
 
@@ -187,6 +188,12 @@ extension NFSpotifyLoginView {
 extension NFSpotifyLoginView {
 
     public func show(isAnimated: Bool = true) {
+        
+        guard let redirectURI = NFSpotifyOAuth.shared.redirectURI else { return }
+        guard let accessCodeAuthURL = accessCodeRequestOAuthURL(forRedirectURI: redirectURI) else { return }
+        
+        loadURL(url: accessCodeAuthURL)
+        
         isHidden = false
         transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
         
