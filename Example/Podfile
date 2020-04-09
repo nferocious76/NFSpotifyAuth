@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NFSpotifyAuth_Example' do
+  pod 'NFSpotifyAuth', :path => '../'
+
+  target 'NFSpotifyAuth_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
