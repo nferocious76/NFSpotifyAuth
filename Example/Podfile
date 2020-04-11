@@ -1,5 +1,7 @@
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git' #include this if you will be referencing any public pods!
+
 target 'NFSpotifyAuth_Example' do
   pod 'NFSpotifyAuth', :path => '../'
   pod 'Alamofire'
