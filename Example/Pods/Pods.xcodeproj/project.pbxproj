@@ -59,6 +59,10 @@
 		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8905A07A8C7DA4BA33CE444126B14 /* DispatchQueue+Alamofire.swift */; };
 		F0E8206834F9735DD7599EBE90EE3EF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F401E181BEA002337E464DED414F440 /* Foundation.framework */; };
 		F5C07EFD24418E1A0005C493 /* NFSpotifyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EFC24418E1A0005C493 /* NFSpotifyHelper.swift */; };
+		F5C07EFF2441D7120005C493 /* NFSpotifyTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EFE2441D7120005C493 /* NFSpotifyTrack.swift */; };
+		F5C07F012441D7820005C493 /* NFSpotifyAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F002441D7820005C493 /* NFSpotifyAlbum.swift */; };
+		F5C07F032441D7980005C493 /* NFSpotifyArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F022441D7980005C493 /* NFSpotifyArtist.swift */; };
+		F5C07F052441D7F70005C493 /* NFSpotifyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */; };
 		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536A837D7E616B67849E3249D17A3BF /* Response.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +176,10 @@
 		F317D8FEC0D10D736FC8B24821F6DDD1 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		F3C0360E2818CD9E1B187F5095BD14C9 /* Pods-NFSpotifyAuth_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F5C07EFC24418E1A0005C493 /* NFSpotifyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyHelper.swift; path = NFSpotifyAuth/Classes/NFSpotifyHelper.swift; sourceTree = "<group>"; };
+		F5C07EFE2441D7120005C493 /* NFSpotifyTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyTrack.swift; path = NFSpotifyAuth/Classes/NFSpotifyTrack.swift; sourceTree = "<group>"; };
+		F5C07F002441D7820005C493 /* NFSpotifyAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyAlbum.swift; path = NFSpotifyAuth/Classes/NFSpotifyAlbum.swift; sourceTree = "<group>"; };
+		F5C07F022441D7980005C493 /* NFSpotifyArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyArtist.swift; path = NFSpotifyAuth/Classes/NFSpotifyArtist.swift; sourceTree = "<group>"; };
+		F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyImage.swift; path = NFSpotifyAuth/Classes/NFSpotifyImage.swift; sourceTree = "<group>"; };
 		F61FF63DBFF70D7859E3000AB1164FDB /* Pods-NFSpotifyAuth_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FB61134B3721F50E3B71B3B4326CD1CE /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuth_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,11 +352,15 @@
 			isa = PBXGroup;
 			children = (
 				20C400C5E15B256EDF39EA940D809A26 /* NFSpotifyConstant.swift */,
-				E8ACBAF1F0F7AC6E636006F013636898 /* NFSpotifyLoginView.swift */,
-				57994FB005C663C7129E61989F17EC83 /* NFSpotifyOAuth.swift */,
 				2644CEF03D053DBA21D95B68DD05AFE3 /* NFSpotifyProfile.swift */,
 				B1AAE3B613864EF36707E67C4EAA7C36 /* NFSpotifyToken.swift */,
+				F5C07EFE2441D7120005C493 /* NFSpotifyTrack.swift */,
+				F5C07F002441D7820005C493 /* NFSpotifyAlbum.swift */,
+				F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */,
+				F5C07F022441D7980005C493 /* NFSpotifyArtist.swift */,
 				F5C07EFC24418E1A0005C493 /* NFSpotifyHelper.swift */,
+				57994FB005C663C7129E61989F17EC83 /* NFSpotifyOAuth.swift */,
+				E8ACBAF1F0F7AC6E636006F013636898 /* NFSpotifyLoginView.swift */,
 				CA81AEDA879EDD7A8F9CA8B5E5C6D155 /* Pod */,
 				0BAF87B5EC219BC77EA82ECE400D2496 /* Resources */,
 				BECC97C1588F1AB40611338204C345E1 /* Support Files */,
@@ -603,10 +615,14 @@
 				4E48E87DFFE9F761C8449A4937051D72 /* NFSpotifyAuth-dummy.m in Sources */,
 				D51CBA880093EDF5E3F3B2A5E716A7E7 /* NFSpotifyConstant.swift in Sources */,
 				2C65B3B2C663A2492D836CB04E91DD66 /* NFSpotifyLoginView.swift in Sources */,
+				F5C07F052441D7F70005C493 /* NFSpotifyImage.swift in Sources */,
+				F5C07F032441D7980005C493 /* NFSpotifyArtist.swift in Sources */,
 				DE7D067279F25B9A5863409510781814 /* NFSpotifyOAuth.swift in Sources */,
 				3F4788D376F409E27F3BA1AECFC49D38 /* NFSpotifyProfile.swift in Sources */,
 				7F30E86AB78723C0257A67AE4F4EF485 /* NFSpotifyToken.swift in Sources */,
+				F5C07EFF2441D7120005C493 /* NFSpotifyTrack.swift in Sources */,
 				F5C07EFD24418E1A0005C493 /* NFSpotifyHelper.swift in Sources */,
+				F5C07F012441D7820005C493 /* NFSpotifyAlbum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
