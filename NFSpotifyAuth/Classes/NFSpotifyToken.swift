@@ -7,17 +7,25 @@
 
 import Foundation
 
-open class NFSpotifyToken: NSObject {
+public enum NFSpotifyTokenType: String {
+    case `default`
+    case client = "client_credentials"
+    case access = "access_token"
+    case auth = "authorization_code"
+    case reresh = "refresh_token"
+}
+
+public class NFSpotifyToken: NSObject {
     
     // MARK: - Declarations
     
-    open var token: String!
-    open var type: String!
-    open var scope: String!
-    open var expiry: Double = 0.0
-    open var refreshToken: String!
+    public var token: String!
+    public var type: NFSpotifyTokenType = .default
+    public var scope: String!
+    public var expiry: Double = 0.0
+    public var refreshToken: String!
     
-    open var expiryDate: Date!
+    public var expiryDate: Date!
     
     // MARK: - Initializers
     
@@ -33,11 +41,11 @@ open class NFSpotifyToken: NSObject {
     }
     
     required convenience public init?(coder aDecoder: NSCoder) {
-        guard let t = aDecoder.decodeObject(forKey: "token") as? String else { return nil }
+        guard let tkn = aDecoder.decodeObject(forKey: "token") as? String, let typ = aDecoder.decodeObject(forKey: "type") as? String else { return nil }
         self.init()
         
-        token = t
-        type = aDecoder.decodeObject(forKey: "type") as? String
+        token = tkn
+        type = NFSpotifyTokenType(rawValue: typ)!
         scope = aDecoder.decodeObject(forKey: "scope") as? String
         refreshToken = aDecoder.decodeObject(forKey: "refreshToken") as? String
         expiryDate = aDecoder.decodeObject(forKey: "expiryDate") as? Date
@@ -68,7 +76,7 @@ extension NFSpotifyToken {
     open func updateToken(tokenInfo info: [String: AnyObject]) {
         
         token = info["access_token"] as? String
-        type = info["token_type"] as? String
+        type = NFSpotifyTokenType(rawValue: info["token_type"] as! String)!
         scope = info["scope"] as? String
         refreshToken = info["refresh_token"] as? String
         
