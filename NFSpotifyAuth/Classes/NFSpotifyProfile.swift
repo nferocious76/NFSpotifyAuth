@@ -138,31 +138,29 @@ extension NFSpotifyProfile {
 extension NFSpotifyProfile {
     
     public func getProfile(withAccessToken token: String, completion: ((_ profileInfo: [String: AnyObject]?, _ error: Error?) -> Void)?) {
+
+        let spotifyHeaders = HTTPHeaders([
+            HTTPHeader(name: "Accept", value: "application/json"),
+            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+        ])
         
-        let spotifyHeaders = ["Accept": "application/json", "Authorization": "Bearer \(token)"]
-        let profileURL = NFBaseURLSpotify + "me"
+        let profileURL = NFBaseURLSpotify + "/me"
         
-        Alamofire.request(profileURL, method: .get, headers: spotifyHeaders).responseJSON { (response) in
-            
-            if response.result.isSuccess, let profileInfo = response.result.value as? [String: AnyObject] {
+        AF
+            .request(profileURL, method: .post, headers: spotifyHeaders)
+            .responseJSON { (response) in
                 
-                print("\nSpotify profile info: \(profileInfo)")
-                
-                if profileInfo["error"] == nil {
-                    self.updateProfile(info: profileInfo)
+                switch response.result {
+                case .success(let value):
+                    print("\nSpotify profile info: \(value)")
                     
+                    let profileInfo = value as! [String: AnyObject]
+                    self.updateProfile(info: profileInfo)
                     completion?(profileInfo, nil)
-                }else{
-                    if let errMsgInfo = profileInfo["error"] as? [String: AnyObject], let errMsg = errMsgInfo["message"] as? String {
-                        let error = NFSpotifyOAuth.createCustomError(errorMessage: "")
-                        completion?(nil, error)
-                    }else{
-                        completion?(nil, response.result.error)
-                    }
+                    
+                case .failure(let error):
+                    completion?(nil, error)
                 }
-            }else{
-                completion?(nil, response.result.error)
-            }
         }
     }
 }

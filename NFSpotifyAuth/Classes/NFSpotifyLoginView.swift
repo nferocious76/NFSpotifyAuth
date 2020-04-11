@@ -172,6 +172,7 @@ extension NFSpotifyLoginView {
         let dialog = show_dialog ? "&show_dialog=true" : ""
         let accessCodeURL = "\(NFSpotifyAutorizationCodeURL)" + urlClientId + urlResponseType + urlRedirectURI + urlScopes + stateKey + dialog
         
+        // 1.
         guard let authURL = URL(string: accessCodeURL) else { return nil }
         return authURL
     }
@@ -258,6 +259,7 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
             return self.delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
+        // 2.
         NFSpotifyOAuth.shared.accessTokenFromAccessCode(accessCode) { (tokenObject, error) in
             
             if let tokenObject = tokenObject, let _ = tokenObject.token {

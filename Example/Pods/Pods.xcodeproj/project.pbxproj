@@ -58,7 +58,7 @@
 		E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317D8FEC0D10D736FC8B24821F6DDD1 /* URLRequest+Alamofire.swift */; };
 		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8905A07A8C7DA4BA33CE444126B14 /* DispatchQueue+Alamofire.swift */; };
 		F0E8206834F9735DD7599EBE90EE3EF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F401E181BEA002337E464DED414F440 /* Foundation.framework */; };
-		F5C07EFD24418E1A0005C493 /* NFSpotifyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EFC24418E1A0005C493 /* NFSpotifyError.swift */; };
+		F5C07EFD24418E1A0005C493 /* NFSpotifyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07EFC24418E1A0005C493 /* NFSpotifyHelper.swift */; };
 		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536A837D7E616B67849E3249D17A3BF /* Response.swift */; };
 /* End PBXBuildFile section */
 
@@ -171,7 +171,7 @@
 		F1EB9FC9A2CB4B161F55B4D40B67DF08 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		F317D8FEC0D10D736FC8B24821F6DDD1 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		F3C0360E2818CD9E1B187F5095BD14C9 /* Pods-NFSpotifyAuth_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F5C07EFC24418E1A0005C493 /* NFSpotifyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyError.swift; path = NFSpotifyAuth/Classes/NFSpotifyError.swift; sourceTree = "<group>"; };
+		F5C07EFC24418E1A0005C493 /* NFSpotifyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyHelper.swift; path = NFSpotifyAuth/Classes/NFSpotifyHelper.swift; sourceTree = "<group>"; };
 		F61FF63DBFF70D7859E3000AB1164FDB /* Pods-NFSpotifyAuth_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FB61134B3721F50E3B71B3B4326CD1CE /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuth_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,7 +348,7 @@
 				57994FB005C663C7129E61989F17EC83 /* NFSpotifyOAuth.swift */,
 				2644CEF03D053DBA21D95B68DD05AFE3 /* NFSpotifyProfile.swift */,
 				B1AAE3B613864EF36707E67C4EAA7C36 /* NFSpotifyToken.swift */,
-				F5C07EFC24418E1A0005C493 /* NFSpotifyError.swift */,
+				F5C07EFC24418E1A0005C493 /* NFSpotifyHelper.swift */,
 				CA81AEDA879EDD7A8F9CA8B5E5C6D155 /* Pod */,
 				0BAF87B5EC219BC77EA82ECE400D2496 /* Resources */,
 				BECC97C1588F1AB40611338204C345E1 /* Support Files */,
@@ -606,7 +606,7 @@
 				DE7D067279F25B9A5863409510781814 /* NFSpotifyOAuth.swift in Sources */,
 				3F4788D376F409E27F3BA1AECFC49D38 /* NFSpotifyProfile.swift in Sources */,
 				7F30E86AB78723C0257A67AE4F4EF485 /* NFSpotifyToken.swift in Sources */,
-				F5C07EFD24418E1A0005C493 /* NFSpotifyError.swift in Sources */,
+				F5C07EFD24418E1A0005C493 /* NFSpotifyHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

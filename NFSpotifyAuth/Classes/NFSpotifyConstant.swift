@@ -8,10 +8,10 @@
 import Foundation
 
 /// Spotify API Base URL
-public let NFBaseURLSpotify = "https://api.spotify.com/v1/"
+public let NFBaseURLSpotify = "https://api.spotify.com/v1"
 
 /// Authorization for access code for token exchange
-public let NFSpotifyAutorizationCodeURL: String = "https://accounts.spotify.com/authorize/"
+public let NFSpotifyAutorizationCodeURL: String = "https://accounts.spotify.com/authorize"
 
 /// Exchange code for token
 public let NFSpotifyAutorizationTokenExchangeURL: String = "https://accounts.spotify.com/api/token"
@@ -68,3 +68,13 @@ public let NFSpotifyAuthError = UIColor.red
 
 /// Success status
 public let NFSpotifyAuthSuccess = UIColor.green
+
+/// Completion handler alias
+public typealias CompletionHandler = ((_ tokenObject: NFSpotifyToken?, _ error: Error?) -> Void)?
+
+
+/// Keys
+let NFSpotifyClientCredentialKey = "NFSpotifyAccessTokenClientCredentialsKey"
+let NFSpotifyAccessCodeLoginKey = "NFSpotifyAccessCodeKey"
+let NFSpotifyAccessTokenLoginCredentialsKey = "SpotifyAccessTokenLoginCredentialsKey"
+let NFSpotifyAccessTokenLoginRefreshKey = "SpotifyAccessTokenRefreshKey"
