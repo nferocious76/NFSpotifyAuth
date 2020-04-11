@@ -134,7 +134,7 @@ extension NFSpotifyLoginView {
     
     fileprivate func loadURL(url: URL) {
         
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60)
         wkWebView.load(request)
     }
     
@@ -189,31 +189,35 @@ extension NFSpotifyLoginView {
         
         loadURL(url: accessCodeAuthURL)
         
-        isHidden = false
-        
-        if animated {
-            transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-            UIView.animate(withDuration: animationDuration) {
+        DispatchQueue.main.async {
+            self.isHidden = false
+            
+            if animated {
+                self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+                UIView.animate(withDuration: self.animationDuration) {
+                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }
+            }else{
                 self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
-        }else{
-            transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
     }
     
     public func hide(isAnimted animated: Bool = true) {
         
-        wkWebView.stopLoading()
+        self.wkWebView.stopLoading()
         
-        if animated {
-            UIView.animate(withDuration: animationDuration, animations: {
+        DispatchQueue.main.async {
+            if animated {
+                UIView.animate(withDuration: self.animationDuration, animations: {
+                    self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+                }) { (isFinished) in
+                    self.isHidden = true
+                }
+            }else{
                 self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-            }) { (isFinished) in
                 self.isHidden = true
             }
-        }else{
-            transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-            isHidden = true
         }
     }
 }
@@ -255,16 +259,15 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
             return delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
-        guard let queryString = url.query else {
-            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No generated access code")
+        guard let queryItems = url.queryItems else {
+            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No valid access code")
             
             setStatusColor(color: NFSpotifyAuthWarning)
             return self.delegate.spotifyLoginView(self, didFailWithError: error)
         }
         
-        let components = queryString.components(separatedBy: "=")
-        guard let accessCode = components.last else {
-            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No generated access code")
+        guard let accessCode = queryItems["code"] else {
+            let error = NFSpotifyOAuth.createCustomError(errorMessage: "No valid access code")
             
             setStatusColor(color: NFSpotifyAuthWarning)
             return self.delegate.spotifyLoginView(self, didFailWithError: error)
