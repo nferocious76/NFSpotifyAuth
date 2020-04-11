@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Error
 
-public func processError(responseData response: [String: AnyObject] = [:], error: Error?) -> Error {
+public func processError(responseData response: [String: AnyObject] = [:], error: Error? = nil) -> Error {
     
     if let errorInfo = response["error"] as? [String: AnyObject], let code = errorInfo["code"]?.integerValue, let message = response["message"] as? String {
         
