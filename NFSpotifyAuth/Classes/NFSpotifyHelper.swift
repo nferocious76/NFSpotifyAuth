@@ -7,6 +7,24 @@
 
 import Foundation
 
+// MARK: - URL
+
+extension URL {
+    
+    /// return query items in object form
+    public var queryItems: [String: String]? {
+        
+        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true) else { return nil }
+        guard let queryItems = components.queryItems else { return nil }
+        
+        let queries = queryItems.reduce(into: [:], { (queries, item) in
+            queries[item.name] = item.value
+        })
+        
+        return queries
+    }
+}
+
 // MARK: - Error
 
 public func processError(responseData response: [String: AnyObject] = [:], error: Error? = nil) -> Error {
