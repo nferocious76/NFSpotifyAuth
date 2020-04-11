@@ -182,7 +182,7 @@ extension NFSpotifyLoginView {
 
 extension NFSpotifyLoginView {
 
-    public func show(isAnimated: Bool = true) {
+    public func show(isAnimated animated: Bool = true) {
         
         guard let redirectURI = NFSpotifyOAuth.shared.redirectURI else { return }
         guard let accessCodeAuthURL = accessCodeRequestOAuthURL(forRedirectURI: redirectURI) else { return }
@@ -190,19 +190,30 @@ extension NFSpotifyLoginView {
         loadURL(url: accessCodeAuthURL)
         
         isHidden = false
-        transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
         
-        UIView.animate(withDuration: animationDuration) {
-            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        if animated {
+            transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+            UIView.animate(withDuration: animationDuration) {
+                self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+        }else{
+            transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
     }
     
-    public func hide(isAnimted: Bool = true) {
+    public func hide(isAnimted animated: Bool = true) {
         
-        UIView.animate(withDuration: animationDuration, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-        }) { (isFinished) in
-            self.isHidden = true
+        wkWebView.stopLoading()
+        
+        if animated {
+            UIView.animate(withDuration: animationDuration, animations: {
+                self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+            }) { (isFinished) in
+                self.isHidden = true
+            }
+        }else{
+            transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+            isHidden = true
         }
     }
 }
@@ -265,6 +276,7 @@ extension NFSpotifyLoginView: WKNavigationDelegate {
             if let tokenObject = tokenObject, let _ = tokenObject.token {
                 self.setStatusColor(color: NFSpotifyAuthSuccess)
                 self.delegate.spotifyLoginView(self, didLoginWithTokenObject: tokenObject)
+                self.hide()
             }else if let error = error {
                 self.setStatusColor(color: NFSpotifyAuthError)
                 self.delegate.spotifyLoginView(self, didFailWithError: error)
