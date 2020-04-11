@@ -74,7 +74,7 @@ public typealias CompletionHandler = ((_ tokenObject: NFSpotifyToken?, _ error: 
 
 
 /// Keys
-let NFSpotifyClientCredentialKey = "NFSpotifyAccessTokenClientCredentialsKey"
-let NFSpotifyAccessCodeLoginKey = "NFSpotifyAccessCodeKey"
-let NFSpotifyAccessTokenLoginCredentialsKey = "SpotifyAccessTokenLoginCredentialsKey"
-let NFSpotifyAccessTokenLoginRefreshKey = "SpotifyAccessTokenRefreshKey"
+public let NFSpotifyClientCredentialKey = "NFSpotifyAccessTokenClientCredentialsKey"
+public let NFSpotifyAccessCodeLoginKey = "NFSpotifyAccessCodeKey"
+public let NFSpotifyAccessTokenLoginCredentialsKey = "NFSpotifyAccessTokenLoginCredentialsKey"
+public let NFSpotifyAccessTokenLoginRefreshKey = "NFSpotifyAccessTokenRefreshKey"
