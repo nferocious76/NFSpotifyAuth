@@ -144,7 +144,7 @@ extension NFSpotifyProfile {
             HTTPHeader(name: "Authorization", value: "Bearer \(token)")
         ])
         
-        let profileURL = NFBaseURLSpotify + "/me"
+        let profileURL = NFSpotifyBaseURL + "/me"
         
         AF
             .request(profileURL, method: .post, headers: spotifyHeaders)

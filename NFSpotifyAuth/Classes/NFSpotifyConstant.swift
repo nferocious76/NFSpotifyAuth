@@ -8,7 +8,7 @@
 import Foundation
 
 /// Spotify API Base URL
-public let NFBaseURLSpotify = "https://api.spotify.com/v1"
+public let NFSpotifyBaseURL = "https://api.spotify.com/v1"
 
 /// Authorization for access code for token exchange
 public let NFSpotifyAutorizationCodeURL: String = "https://accounts.spotify.com/authorize"
