@@ -67,11 +67,15 @@ extension NFSpotifyOAuth {
                 case .success(let value):
                     
                     let tokenInfo = value as! [String: AnyObject]
-                    let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
                     
-                    let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
-                    
-                    completion?(tokenObject, nil)
+                    if tokenInfo["error"] == nil {
+                        let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
+                        let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
+                        
+                        completion?(tokenObject, nil)
+                    }else{
+                        completion?(nil, processError(responseData: tokenInfo))
+                    }
                     
                 case .failure(let error):
                     completion?(nil, processError(error: error))
@@ -108,11 +112,15 @@ extension NFSpotifyOAuth {
                 case .success(let value):
                     
                     let tokenInfo = value as! [String: AnyObject]
-                    let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
                     
-                    let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
-                    
-                    completion?(tokenObject, nil)
+                    if tokenInfo["error"] == nil {
+                        let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
+                        let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
+                        
+                        completion?(tokenObject, nil)
+                    }else{
+                        completion?(nil, processError(responseData: tokenInfo))
+                    }
                     
                 case .failure(let error):
                     completion?(nil, processError(error: error))
@@ -147,11 +155,15 @@ extension NFSpotifyOAuth {
                 case .success(let value):
 
                     let tokenInfo = value as! [String: AnyObject]
-                    let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
                     
-                    let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
-                    
-                    completion?(tokenObject, nil)
+                    if tokenInfo["error"] == nil {
+                        let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
+                        let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
+                        
+                        completion?(tokenObject, nil)
+                    }else{
+                        completion?(nil, processError(responseData: tokenInfo))
+                    }
                     
                 case .failure(let error):
                     completion?(nil, processError(error: error))
@@ -179,11 +191,15 @@ extension NFSpotifyOAuth {
                 case .success(let value):
 
                     let tokenInfo = value as! [String: AnyObject]
-                    let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
                     
-                    let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
-                    
-                    completion?(tokenObject, nil)
+                    if tokenInfo["error"] == nil {
+                        let tokenObject = NFSpotifyToken(tokenInfo: tokenInfo)
+                        let _ = archive(object: tokenObject, secure: true, key: NFSpotifyClientCredentialKey)
+                        
+                        completion?(tokenObject, nil)
+                    }else{
+                        completion?(nil, processError(responseData: tokenInfo))
+                    }
                     
                 case .failure(let error):
                     completion?(nil, processError(error: error))
