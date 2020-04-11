@@ -67,12 +67,6 @@ public class NFSpotifyLoginView: UIView {
         
         prepareWebLoginView(withFrame: frame)
         prepareCloseButton(withBaseFrame: frame)
-        
-        /*
-        guard let redirectURI = NFSpotifyOAuth.shared.redirectURI else { return }
-        guard let accessCodeAuthURL = accessCodeRequestOAuthURL(forRedirectURI: redirectURI) else { return }
-        
-        loadURL(url: accessCodeAuthURL)*/
     }
 }
 
@@ -175,7 +169,7 @@ extension NFSpotifyLoginView {
             stateKey = "state=\(state)"
         }
         
-        let dialog = show_dialog ? "show_dialog=true" : ""
+        let dialog = show_dialog ? "&show_dialog=true" : ""
         let accessCodeURL = "\(NFSpotifyAutorizationCodeURL)" + urlClientId + urlResponseType + urlRedirectURI + urlScopes + stateKey + dialog
         
         guard let authURL = URL(string: accessCodeURL) else { return nil }
