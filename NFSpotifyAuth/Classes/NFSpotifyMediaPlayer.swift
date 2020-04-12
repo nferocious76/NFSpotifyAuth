@@ -81,6 +81,7 @@ public class NFSpotifyMediaPlayer: NSObject {
     public var track: NFSpotifyTrack! {
         didSet {
             // start download
+            playTrack()
         }
     }
     
@@ -192,8 +193,8 @@ extension NFSpotifyMediaPlayer {
 extension NFSpotifyMediaPlayer: AVAudioPlayerDelegate {
     
     public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        stopProgressTimer()
         status = .stopped
-        
     }
     
     public func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
@@ -231,13 +232,24 @@ extension NFSpotifyMediaPlayer {
             if let player = prepareMediaPlayer(track: track) {
                 player.volume = 1.0
                 player.play()
-                status = .playing
                 
+                startProgressTimer()
+                
+                status = .playing
                 mediaPlayer = player
             }
         }else{
             status = .caching
             track.cacheSoundDataWithDelegate(self)
         }
+    }
+    
+    public func pauseTrack() {
+        guard let player = mediaPlayer else {
+            return
+        }
+        
+        player.stop()
+        status = .stopped
     }
 }

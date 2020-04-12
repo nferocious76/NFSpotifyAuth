@@ -81,6 +81,7 @@ public class NFSpotifyMiniPlayerView: UIView {
     
     public var track: NFSpotifyTrack! {
         didSet {
+            mediaPlayer.track = track
             updateTrack(track)
         }
     }
@@ -139,7 +140,7 @@ public class NFSpotifyMiniPlayerView: UIView {
         
         progressView.progressTintColor = progressTintColor
         progressView.trackTintColor = trackTintColor
-        progressView.progress = 0.2
+        progressView.progress = 0.0
         
         trackImage.clipsToBounds = true
         trackImage.layer.cornerRadius = 1.0
@@ -161,7 +162,8 @@ public class NFSpotifyMiniPlayerView: UIView {
     @IBAction private func playPauseButton(_ sender: UIButton) {
         
         self.delegate.musicMiniPlayerViewDidTapPlay(self)
-        mediaPlayer.playTrack()
+        
+        mediaPlayer.isPlaying ? mediaPlayer.pauseTrack() : mediaPlayer.playTrack()
     }
     
     @IBAction private func toggleButton(_ sender: UIButton) {
@@ -177,7 +179,7 @@ extension NFSpotifyMiniPlayerView: NFSpotifyMediaPlayerDelegate {
     public func mediaPlayer(_ player: NFSpotifyMediaPlayer, didUpdateStatus status: NFSpotifyMediaPlayerStatus, forTrack track: NFSpotifyTrack!) {
         
         self.status = status
-        self.track = track
+        updateTrack(track)
     }
     
     public func mediaPlayer(_ player: NFSpotifyMediaPlayer, didUpdatePlayback playback: NFSpotifyPlayback) {
@@ -263,13 +265,21 @@ extension NFSpotifyMiniPlayerView {
         
         DispatchQueue.main.async {
             if let track = self.track {
-                self.titleLbl.text = "Loading…"
-                self.detailLbl.text = track.name
-                
+                if self.status == .caching {
+                    self.titleLbl.text = "Loading…"
+                    self.detailLbl.text = track.name
+                }else{
+                    self.titleLbl.text = track.name
+                    
+                    if let artist = track.artists.first {
+                        self.detailLbl.text = artist.name
+                    }else{
+                        self.detailLbl.text = ""
+                    }
+                }
             }else{
                 self.titleLbl.text = "Select Track"
                 self.detailLbl.text = "Waiting…"
-                self.status = .stopped
             }
         }
     }
