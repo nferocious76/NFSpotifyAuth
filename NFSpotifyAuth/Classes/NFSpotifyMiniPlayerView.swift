@@ -9,10 +9,11 @@ import Foundation
 
 public protocol NFSpotifyMiniPlayerViewDelegate: NSObjectProtocol {
     
-    func musicMiniPlayerViewDidTapToggle(_ view: NFSpotifyMiniPlayerView)
-    
     func musicMiniPlayerViewDidShow(_ view: NFSpotifyMiniPlayerView)
     func musicMiniPlayerViewDidClose(_ view: NFSpotifyMiniPlayerView)
+    
+    func musicMiniPlayerViewDidTapToggle(_ view: NFSpotifyMiniPlayerView)
+    func musicMiniPlayerViewDidTapPlay(_ view: NFSpotifyMiniPlayerView)
 }
 
 public class NFSpotifyMiniPlayerView: UIView {
@@ -39,13 +40,13 @@ public class NFSpotifyMiniPlayerView: UIView {
         }
     }
     
-    public var progressTintColor: UIColor = UIColor(red: 16, green: 23, blue: 197, alpha: 1) {
+    public var progressTintColor: UIColor = .blue {
         didSet {
             progress.progressTintColor = progressTintColor
         }
     }
 
-    public var trackTintColor: UIColor = UIColor(red: 232, green: 232, blue: 232, alpha: 1) {
+    public var trackTintColor: UIColor = UIColor(red: 146, green: 146, blue: 146, alpha: 1) {
         didSet {
             progress.trackTintColor = trackTintColor
         }
@@ -69,7 +70,7 @@ public class NFSpotifyMiniPlayerView: UIView {
         }
     }
     
-    public var detailLblTextColor: UIColor = UIColor(red: 146, green: 146, blue: 146, alpha: 1) {
+    public var detailLblTextColor: UIColor = .lightGray {
         didSet {
             detailLbl.textColor = detailLblTextColor
         }
@@ -91,19 +92,38 @@ public class NFSpotifyMiniPlayerView: UIView {
         prepareMiniPlayer()
     }
     
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        let topLine = UIBezierPath(rect: CGRect(x: 0, y: 0, width: frame.size.width, height: 0.5))
+        NFSpotifyMiniPlayerHairline.setStroke()
+        topLine.lineWidth = 0.5
+        topLine.stroke()
+        
+        let bottomLine = UIBezierPath(rect: CGRect(x: 0, y: frame.size.height - 0.5, width: frame.size.width, height: 0.5))
+        NFSpotifyMiniPlayerHairline.setStroke()
+        bottomLine.lineWidth = 0.5
+        bottomLine.stroke()
+    }
+    
     private func prepareMiniPlayer() {
         
         clipsToBounds = true
+        let bundle = Bundle(for: NFSpotifyMiniPlayerView.self)
         
         let color = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
         toggleButton.setBackgroundImage(generateImageWithColor(color), for: .highlighted) // add responsive tap effect on toggle
+        toggleButton.backgroundColor = .clear
         
-        playPauseButton.setImage(UIImage(named: "PlayButton"), for: .normal) // currently at default state
-        playPauseButton.setImage(UIImage(named: "PauseButton"), for: .selected) // currently at playing state
+        let playImage = UIImage(named: "PlayButton", in: bundle, compatibleWith: .none)
+        playPauseButton.setImage(playImage, for: .normal) // currently at default state
+        
+        let pauseImage = UIImage(named: "PauseButton", in: bundle, compatibleWith: .none)
+        playPauseButton.setImage(pauseImage, for: .selected) // currently at playing state
         
         progress.progressTintColor = progressTintColor
         progress.trackTintColor = trackTintColor
-        progress.progress = 0.0
+        progress.progress = 0.2
         
         trackImage.clipsToBounds = true
         trackImage.layer.cornerRadius = 1.0
@@ -120,11 +140,24 @@ public class NFSpotifyMiniPlayerView: UIView {
         detailLbl.textColor = detailLblTextColor
     }
     
+    // MARK: - Actions
+    
+    @IBAction private func playPauseButton(_ sender: UIButton) {
+        
+        self.delegate.musicMiniPlayerViewDidTapPlay(self)
+    }
+    
+    @IBAction private func toggleButton(_ sender: UIButton) {
+
+        self.delegate.musicMiniPlayerViewDidTapToggle(self)
+    }
 }
 
 // MARK: - Internal Controls
 
 extension NFSpotifyMiniPlayerView {
+    
+    
     
     private func generateImageWithColor(_ color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
@@ -178,6 +211,45 @@ extension NFSpotifyMiniPlayerView {
                 self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
                 self.isHidden = true
                 self.delegate.musicMiniPlayerViewDidClose(self)
+            }
+        }
+    }
+}
+
+// MARK: Controls
+
+extension NFSpotifyMiniPlayerView {
+    
+    public func updateFrame(_ frame: CGRect) {
+        
+        DispatchQueue.main.async {
+            self.frame = frame
+            self.layoutIfNeeded()
+        }
+    }
+    
+    public func updateTrack(_ track: NFSpotifyTrack) {
+        
+        
+        titleLbl.text = "Loading…"
+        detailLbl.text = track.name
+        
+        
+    }
+    
+    public func updateStatus(_ status: NFSpotifyMediaPlayerStatus) {
+        
+        // force to start on main thread
+        DispatchQueue.main.async {
+            self.activityIndicator.isHidden = status != .caching // hide if caching
+            self.playPauseButton.isHidden = status == .caching // hide if caching
+            self.playPauseButton.isSelected = status == .playing
+            
+            switch status {
+            case .caching:
+                self.activityIndicator.startAnimating()
+            default:
+                self.activityIndicator.stopAnimating()
             }
         }
     }

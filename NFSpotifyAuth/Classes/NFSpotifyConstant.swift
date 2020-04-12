@@ -87,6 +87,8 @@ public let NFSpotifyAccessTokenLoginRefreshKey = "NFSpotifyAccessTokenRefreshKey
 
 // MARK: - Player
 
+public let NFSpotifyMiniPlayerHairline = UIColor.gray
+
 public enum NFSpotifyMediaPlayerStatus: Int {
     
     case `default`
