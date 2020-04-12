@@ -5,6 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/NFSpotifyAuth.svg?style=flat)](https://cocoapods.org/pods/NFSpotifyAuth)
 [![Platform](https://img.shields.io/cocoapods/p/NFSpotifyAuth.svg?style=flat)](https://cocoapods.org/pods/NFSpotifyAuth)
 
+#### Demo
+- [Demo Video](https://youtu.be/Ts1CefLdBuQ)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -12,6 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Features
 
 - [x] Spotify Authentication using WebOAuth
+- [x] Mini Player View
 
 ## Requirements
 
