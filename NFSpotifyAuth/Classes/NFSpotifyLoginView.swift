@@ -11,6 +11,11 @@ import WebKit
 
 public protocol NFSpotifyLoginViewDelegate: NSObjectProtocol {
     
+    // useful for updating UI
+    func spotifyLoginViewDidShow(_ view: NFSpotifyLoginView)
+    func spotifyLoginViewDidClose(_ view: NFSpotifyLoginView)
+    
+    // main observer protocol
     func spotifyLoginView(_ view: NFSpotifyLoginView, didLoginWithTokenObject tObject: NFSpotifyToken)
     func spotifyLoginView(_ view: NFSpotifyLoginView, didFailWithError error: Error?)
 }
@@ -199,9 +204,11 @@ extension NFSpotifyLoginView {
                 self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
                 UIView.animate(withDuration: self.animationDuration) {
                     self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    self.delegate.spotifyLoginViewDidShow(self)
                 }
             }else{
                 self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.delegate.spotifyLoginViewDidShow(self)
             }
         }
     }
@@ -216,10 +223,12 @@ extension NFSpotifyLoginView {
                     self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
                 }) { (isFinished) in
                     self.isHidden = true
+                    self.delegate.spotifyLoginViewDidClose(self)
                 }
             }else{
                 self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
                 self.isHidden = true
+                self.delegate.spotifyLoginViewDidClose(self)
             }
         }
     }
