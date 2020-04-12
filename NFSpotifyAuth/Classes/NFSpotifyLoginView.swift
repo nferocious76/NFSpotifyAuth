@@ -235,7 +235,7 @@ extension NFSpotifyLoginView {
 
 extension NFSpotifyLoginView {
     
-    func setStatusColor(color: UIColor) {
+    internal func setStatusColor(color: UIColor) {
         
         backgroundColor = color
     }

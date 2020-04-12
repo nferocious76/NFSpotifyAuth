@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 public protocol NFSpotifyMiniPlayerViewDelegate: NSObjectProtocol {
     
@@ -18,21 +19,23 @@ public protocol NFSpotifyMiniPlayerViewDelegate: NSObjectProtocol {
 
 public class NFSpotifyMiniPlayerView: UIView {
     
-    @IBOutlet weak private var progress: UIProgressView! // Playback progress bar
-    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak internal var progressView: UIProgressView! // Playback progress bar
+    @IBOutlet weak internal var activityIndicator: UIActivityIndicatorView!
         
-    @IBOutlet weak private var titleLbl: UILabel!
-    @IBOutlet weak private var detailLbl: UILabel!
+    @IBOutlet weak internal var titleLbl: UILabel!
+    @IBOutlet weak internal var detailLbl: UILabel!
     
-    @IBOutlet weak private var trackImage: UIImageView!
-    @IBOutlet weak private var sourceBadge: UIImageView!
+    @IBOutlet weak internal var trackImage: UIImageView!
+    @IBOutlet weak internal var sourceBadge: UIImageView!
     
-    @IBOutlet weak private var playPauseButton: UIButton!
-    @IBOutlet weak private var toggleButton: UIButton! // view toggle handler
+    @IBOutlet weak internal var playPauseButton: UIButton!
+    @IBOutlet weak internal var toggleButton: UIButton! // view toggle handler
     
     // MARK: - Declarations
     
     public weak var delegate: NFSpotifyMiniPlayerViewDelegate!
+    
+    public var mediaPlayer: NFSpotifyMediaPlayer!
     public var animationDuration: TimeInterval = 0.33
     public var cornerRadius: CGFloat = 0.0 {
         didSet {
@@ -42,13 +45,13 @@ public class NFSpotifyMiniPlayerView: UIView {
     
     public var progressTintColor: UIColor = .blue {
         didSet {
-            progress.progressTintColor = progressTintColor
+            progressView.progressTintColor = progressTintColor
         }
     }
 
     public var trackTintColor: UIColor = UIColor(red: 146, green: 146, blue: 146, alpha: 1) {
         didSet {
-            progress.trackTintColor = trackTintColor
+            progressView.trackTintColor = trackTintColor
         }
     }
     
@@ -75,6 +78,18 @@ public class NFSpotifyMiniPlayerView: UIView {
             detailLbl.textColor = detailLblTextColor
         }
     }
+    
+    public var track: NFSpotifyTrack! {
+        didSet {
+            updateTrack(track)
+        }
+    }
+    
+    public var status: NFSpotifyMediaPlayerStatus = .default {
+        didSet {
+            updateStatus(status)
+        }
+    }
 
     public class func instance(withDelegate delegate: NFSpotifyMiniPlayerViewDelegate) -> NFSpotifyMiniPlayerView {
         
@@ -89,6 +104,7 @@ public class NFSpotifyMiniPlayerView: UIView {
     public override func awakeFromNib() {
         super.awakeFromNib()
      
+        mediaPlayer = NFSpotifyMediaPlayer(withDelegate: self)
         prepareMiniPlayer()
     }
     
@@ -121,9 +137,9 @@ public class NFSpotifyMiniPlayerView: UIView {
         let pauseImage = UIImage(named: "PauseButton", in: bundle, compatibleWith: .none)
         playPauseButton.setImage(pauseImage, for: .selected) // currently at playing state
         
-        progress.progressTintColor = progressTintColor
-        progress.trackTintColor = trackTintColor
-        progress.progress = 0.2
+        progressView.progressTintColor = progressTintColor
+        progressView.trackTintColor = trackTintColor
+        progressView.progress = 0.2
         
         trackImage.clipsToBounds = true
         trackImage.layer.cornerRadius = 1.0
@@ -145,6 +161,7 @@ public class NFSpotifyMiniPlayerView: UIView {
     @IBAction private func playPauseButton(_ sender: UIButton) {
         
         self.delegate.musicMiniPlayerViewDidTapPlay(self)
+        mediaPlayer.playTrack()
     }
     
     @IBAction private func toggleButton(_ sender: UIButton) {
@@ -153,12 +170,26 @@ public class NFSpotifyMiniPlayerView: UIView {
     }
 }
 
+// MARK: - NFSpotifyMediaPlayerDelegate
+
+extension NFSpotifyMiniPlayerView: NFSpotifyMediaPlayerDelegate {
+    
+    public func mediaPlayer(_ player: NFSpotifyMediaPlayer, didUpdateStatus status: NFSpotifyMediaPlayerStatus, forTrack track: NFSpotifyTrack!) {
+        
+        self.status = status
+        self.track = track
+    }
+    
+    public func mediaPlayer(_ player: NFSpotifyMediaPlayer, didUpdatePlayback playback: NFSpotifyPlayback) {
+        
+        progressView.progress = playback.progress
+    }
+}
+
 // MARK: - Internal Controls
 
 extension NFSpotifyMiniPlayerView {
-    
-    
-    
+        
     private func generateImageWithColor(_ color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         
@@ -228,13 +259,19 @@ extension NFSpotifyMiniPlayerView {
         }
     }
     
-    public func updateTrack(_ track: NFSpotifyTrack) {
+    public func updateTrack(_ track: NFSpotifyTrack!) {
         
-        
-        titleLbl.text = "Loading…"
-        detailLbl.text = track.name
-        
-        
+        DispatchQueue.main.async {
+            if let track = self.track {
+                self.titleLbl.text = "Loading…"
+                self.detailLbl.text = track.name
+                
+            }else{
+                self.titleLbl.text = "Select Track"
+                self.detailLbl.text = "Waiting…"
+                self.status = .stopped
+            }
+        }
     }
     
     public func updateStatus(_ status: NFSpotifyMediaPlayerStatus) {
@@ -252,5 +289,10 @@ extension NFSpotifyMiniPlayerView {
                 self.activityIndicator.stopAnimating()
             }
         }
+    }
+    
+    func resetPlayer() {
+        
+        track = nil
     }
 }

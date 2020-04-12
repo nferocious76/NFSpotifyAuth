@@ -111,7 +111,7 @@
                 <outlet property="activityIndicator" destination="kxO-wU-JL8" id="08m-4z-1ck"/>
                 <outlet property="detailLbl" destination="6aA-CP-KYi" id="Pd5-bG-n6h"/>
                 <outlet property="playPauseButton" destination="7Ky-W4-IxV" id="ABN-Dd-ylM"/>
-                <outlet property="progress" destination="lyC-Q7-q2A" id="1xs-U0-SS4"/>
+                <outlet property="progressView" destination="lyC-Q7-q2A" id="iLl-4i-i3t"/>
                 <outlet property="sourceBadge" destination="mpC-jJ-whF" id="vzW-uc-4HC"/>
                 <outlet property="titleLbl" destination="dBX-Vb-0Bf" id="QlY-uP-sPr"/>
                 <outlet property="toggleButton" destination="MLM-tn-93z" id="PqS-t8-2LQ"/>
