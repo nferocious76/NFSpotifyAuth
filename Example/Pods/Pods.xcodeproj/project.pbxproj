@@ -65,6 +65,8 @@
 		F5C07F052441D7F70005C493 /* NFSpotifyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */; };
 		F5C07F072441E4830005C493 /* NFSpotifyTrackMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F062441E4830005C493 /* NFSpotifyTrackMedia.swift */; };
 		F5C07F0D2442ACED0005C493 /* NFSpotifyLoginViewFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F0C2442ACED0005C493 /* NFSpotifyLoginViewFunction.swift */; };
+		F5C07F0F2442AF050005C493 /* NFSpotifyMiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F0E2442AF050005C493 /* NFSpotifyMiniPlayerView.swift */; };
+		F5C07F112442AF9A0005C493 /* NFSpotifyMiniPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C07F102442AF9A0005C493 /* NFSpotifyMiniPlayerView.xib */; };
 		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536A837D7E616B67849E3249D17A3BF /* Response.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +186,8 @@
 		F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyImage.swift; path = NFSpotifyAuth/Classes/NFSpotifyImage.swift; sourceTree = "<group>"; };
 		F5C07F062441E4830005C493 /* NFSpotifyTrackMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyTrackMedia.swift; path = NFSpotifyAuth/Classes/NFSpotifyTrackMedia.swift; sourceTree = "<group>"; };
 		F5C07F0C2442ACED0005C493 /* NFSpotifyLoginViewFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyLoginViewFunction.swift; path = NFSpotifyAuth/Classes/NFSpotifyLoginViewFunction.swift; sourceTree = "<group>"; };
+		F5C07F0E2442AF050005C493 /* NFSpotifyMiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyMiniPlayerView.swift; path = NFSpotifyAuth/Classes/NFSpotifyMiniPlayerView.swift; sourceTree = "<group>"; };
+		F5C07F102442AF9A0005C493 /* NFSpotifyMiniPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NFSpotifyMiniPlayerView.xib; path = NFSpotifyAuth/Classes/NFSpotifyMiniPlayerView.xib; sourceTree = "<group>"; };
 		F61FF63DBFF70D7859E3000AB1164FDB /* Pods-NFSpotifyAuth_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FB61134B3721F50E3B71B3B4326CD1CE /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuth_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +371,8 @@
 				57994FB005C663C7129E61989F17EC83 /* NFSpotifyOAuth.swift */,
 				E8ACBAF1F0F7AC6E636006F013636898 /* NFSpotifyLoginView.swift */,
 				F5C07F0C2442ACED0005C493 /* NFSpotifyLoginViewFunction.swift */,
+				F5C07F0E2442AF050005C493 /* NFSpotifyMiniPlayerView.swift */,
+				F5C07F102442AF9A0005C493 /* NFSpotifyMiniPlayerView.xib */,
 				CA81AEDA879EDD7A8F9CA8B5E5C6D155 /* Pod */,
 				0BAF87B5EC219BC77EA82ECE400D2496 /* Resources */,
 				BECC97C1588F1AB40611338204C345E1 /* Support Files */,
@@ -608,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D97436DBD0E6A0367133D3B9287E3FD1 /* Media.xcassets in Resources */,
+				F5C07F112442AF9A0005C493 /* NFSpotifyMiniPlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +630,7 @@
 				2C65B3B2C663A2492D836CB04E91DD66 /* NFSpotifyLoginView.swift in Sources */,
 				F5C07F052441D7F70005C493 /* NFSpotifyImage.swift in Sources */,
 				F5C07F032441D7980005C493 /* NFSpotifyArtist.swift in Sources */,
+				F5C07F0F2442AF050005C493 /* NFSpotifyMiniPlayerView.swift in Sources */,
 				DE7D067279F25B9A5863409510781814 /* NFSpotifyOAuth.swift in Sources */,
 				3F4788D376F409E27F3BA1AECFC49D38 /* NFSpotifyProfile.swift in Sources */,
 				7F30E86AB78723C0257A67AE4F4EF485 /* NFSpotifyToken.swift in Sources */,
