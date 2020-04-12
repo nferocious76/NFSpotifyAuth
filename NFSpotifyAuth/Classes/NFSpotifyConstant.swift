@@ -84,3 +84,33 @@ public let NFSpotifyClientCredentialKey = "NFSpotifyAccessTokenClientCredentials
 public let NFSpotifyAccessCodeLoginKey = "NFSpotifyAccessCodeKey"
 public let NFSpotifyAccessTokenLoginCredentialsKey = "NFSpotifyAccessTokenLoginCredentialsKey"
 public let NFSpotifyAccessTokenLoginRefreshKey = "NFSpotifyAccessTokenRefreshKey"
+
+// MARK: - Player
+
+public enum NFSpotifyMediaPlayerStatus: Int {
+    
+    case `default`
+    case stopped
+    case playing
+    case paused
+    case interrupted
+    case caching
+    
+    var description: String {
+        switch self {
+        case .stopped:
+            return "Stopped"
+        case .playing:
+            return "Playing"
+        case .paused:
+            return "Paused"
+        case .interrupted:
+            return "Interrupted"
+        case .caching:
+            return "Caching"
+
+        default:
+            return "Default"
+        }
+    }
+}

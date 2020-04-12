@@ -18,6 +18,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="9xa-FI-lWs"/>
                     </constraints>
+                    <color key="progressTintColor" red="0.12156862745098039" green="0.08858625856164383" blue="0.77077237358984685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </progressView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music track title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBX-Vb-0Bf">
                     <rect key="frame" x="48" y="10" width="318" height="18"/>
@@ -34,7 +35,7 @@
                         <constraint firstAttribute="height" constant="14" id="HBl-Ho-nsc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music-icon" translatesAutoresizingMaskIntoConstraints="NO" id="1DU-yW-n81">
@@ -66,7 +67,7 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLM-tn-93z">
                     <rect key="frame" x="0.0" y="2" width="374" height="48"/>
-                    <color key="backgroundColor" white="0.67000000000000004" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.9137254901960784" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal">
                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
