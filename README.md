@@ -33,8 +33,42 @@ pod 'NFSpotifyAuth'
 
 ## Usage
 
-```
-TODO: - add usage
+```swift
+
+NFSpotifyOAuth.shared.set(clientId: SpotifyClientID, clientSecret: SpotifyClientSecret, redirectURI: SpotifyCallbackURI)
+
+let rectFrame = CGRect(x: 30, y: 80, width: view.frame.width - 60, height: 400)
+let loginView = NFSpotifyLoginView(frame: rectFrame, scopes: NFSpotifyAvailableScopes, delegate: self)
+view.addSubview(loginView)
+loginView.show()
+
+// mini player
+let miniPlayer = NFSpotifyMiniPlayerView.instance(withDelegate: self)
+let playerFrame = CGRect(x: 0, y: view.frame.height - miniPlayer.frame.size.height, width: view.frame.size.width, height: miniPlayer.frame.size.height)
+view.addSubview(miniPlayer)
+miniPlayer.updateFrame(playerFrame)
+
+// MARK: - NFSpotifyLoginViewDelegate
+
+extension ViewController {
+    
+    func spotifyLoginViewDidShow(_ view: NFSpotifyLoginView) {
+    
+    }
+    
+    func spotifyLoginViewDidClose(_ view: NFSpotifyLoginView) {
+    
+    }
+    
+    func spotifyLoginView(_ view: NFSpotifyLoginView, didFailWithError error: Error?) {
+        print("err: \(error)")
+    }
+    
+    func spotifyLoginView(_ view: NFSpotifyLoginView, didLoginWithTokenObject tObject: NFSpotifyToken) {
+        print("didLoginWithTokenObject: \(tObject)")
+    }
+}
+
 ```
 
 ## Author
