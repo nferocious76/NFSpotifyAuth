@@ -230,6 +230,7 @@ extension NFSpotifyMediaPlayer {
         
         if let player = mediaPlayer, status == .paused {
             player.play()
+            status = .playing
         }else{
             if track.soundData != nil || track.soundType == .musicLibrary {
                 if let player = prepareMediaPlayer(track: track) {
