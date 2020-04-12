@@ -133,7 +133,7 @@ extension ViewController {
                             }
                             
                             if let firstTrack = tempTracks.first {
-                                firstTrack.cacheSoundDataWithDelegate(self)
+                                self.miniPlayer.track = firstTrack
                             }
                             
                             self.spotifyTracks = tempTracks

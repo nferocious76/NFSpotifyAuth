@@ -34,6 +34,10 @@ extension ViewController: NFSpotifyTrackDelegate {
 
 extension ViewController: NFSpotifyMiniPlayerViewDelegate {
     
+    func musicMiniPlayerViewDidTapPlay(_ view: NFSpotifyMiniPlayerView) {
+        
+    }
+    
     func musicMiniPlayerViewDidTapToggle(_ view: NFSpotifyMiniPlayerView) {
         
     }
