@@ -20,6 +20,7 @@ class ViewController: UIViewController, NFSpotifyLoginViewDelegate {
 
     @IBOutlet weak var connectButton: UIButton!
     private var loginView: NFSpotifyLoginView!
+    private var miniPlayer: NFSpotifyMiniPlayerView!
     
     private var CountryCode: String = {
         (Locale.current as NSLocale).object(forKey: NSLocale.Key.countryCode) as? String ?? "US"
@@ -42,6 +43,12 @@ class ViewController: UIViewController, NFSpotifyLoginViewDelegate {
         let rectFrame = CGRect(x: 30, y: 80, width: view.frame.width - 60, height: 400)
         loginView = NFSpotifyLoginView(frame: rectFrame, scopes: NFSpotifyAvailableScopes, delegate: self)
         view.addSubview(loginView)
+        
+        // mini player
+        miniPlayer = NFSpotifyMiniPlayerView.instance(withDelegate: self)
+        let playerFrame = CGRect(x: 0, y: view.frame.height - miniPlayer.frame.size.height, width: view.frame.size.width, height: miniPlayer.frame.size.height)
+        view.addSubview(miniPlayer)
+        miniPlayer.updateFrame(playerFrame)
     }
 
     @IBAction func connectButton(_ sender: UIButton) {

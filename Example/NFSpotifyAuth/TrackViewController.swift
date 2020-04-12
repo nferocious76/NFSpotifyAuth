@@ -10,6 +10,7 @@ import Foundation
 import NFSpotifyAuth
 
 // MARK: - NFSpotifyTrackDelegate
+
 extension ViewController: NFSpotifyTrackDelegate {
     
     func trackDidBeginCaching(_ track: NFSpotifyTrack) {
@@ -27,4 +28,21 @@ extension ViewController: NFSpotifyTrackDelegate {
         
     }
     
+}
+
+// MARK: - NFSpotifyMiniPlayerViewDelegate
+
+extension ViewController: NFSpotifyMiniPlayerViewDelegate {
+    
+    func musicMiniPlayerViewDidTapToggle(_ view: NFSpotifyMiniPlayerView) {
+        
+    }
+    
+    func musicMiniPlayerViewDidShow(_ view: NFSpotifyMiniPlayerView) {
+        
+    }
+    
+    func musicMiniPlayerViewDidClose(_ view: NFSpotifyMiniPlayerView) {
+        
+    }
 }
