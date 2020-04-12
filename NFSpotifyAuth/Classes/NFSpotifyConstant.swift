@@ -16,6 +16,9 @@ public let NFSpotifyAutorizationCodeURL: String = "https://accounts.spotify.com/
 /// Exchange code for token
 public let NFSpotifyAutorizationTokenExchangeURL: String = "https://accounts.spotify.com/api/token"
 
+/// iTunes User Agent
+public let iTunesUserAgent = "iTunes/12.8.1 (Macintosh; U; Intel Mac OS X 10.15.4; en-ca)" // iTunes request header.
+
 /// Authorization Scopes
 public let NFSpotifyAvailableScopes: [String] = [
 
@@ -72,8 +75,11 @@ public let NFSpotifyAuthSuccess = UIColor.green
 /// Completion handler alias
 public typealias CompletionHandler = ((_ tokenObject: NFSpotifyToken?, _ error: Error?) -> Void)?
 
+/// Completion data handler alias
+public typealias CompletionDataHandler = ((_ responseData: Data?, _ error: Error?) -> Void)?
 
-/// Keys
+// MARK: - UserDefault Keys
+
 public let NFSpotifyClientCredentialKey = "NFSpotifyAccessTokenClientCredentialsKey"
 public let NFSpotifyAccessCodeLoginKey = "NFSpotifyAccessCodeKey"
 public let NFSpotifyAccessTokenLoginCredentialsKey = "NFSpotifyAccessTokenLoginCredentialsKey"

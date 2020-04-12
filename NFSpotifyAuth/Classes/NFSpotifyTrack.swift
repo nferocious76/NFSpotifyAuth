@@ -11,7 +11,7 @@ public protocol NFSpotifyTrackDelegate: NSObjectProtocol {
     
     func trackDidBeginCaching(_ track: NFSpotifyTrack)
     func trackDidFinishCaching(_ track: NFSpotifyTrack)
-    func trackCachingFailed(_ track: NFSpotifyTrack, error: NSError?)
+    func trackDidFailCaching(_ track: NFSpotifyTrack, error: Error?)
 }
 
 public enum NFSpotifyTrackSoundType: Int {
