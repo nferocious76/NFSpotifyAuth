@@ -228,19 +228,23 @@ extension NFSpotifyMediaPlayer {
     public func playTrack() {
         guard let track = track else { return }
         
-        if track.soundData != nil || track.soundType == .musicLibrary {
-            if let player = prepareMediaPlayer(track: track) {
-                player.volume = 1.0
-                player.play()
-                
-                startProgressTimer()
-                
-                status = .playing
-                mediaPlayer = player
-            }
+        if let player = mediaPlayer, status == .paused {
+            player.play()
         }else{
-            status = .caching
-            track.cacheSoundDataWithDelegate(self)
+            if track.soundData != nil || track.soundType == .musicLibrary {
+                if let player = prepareMediaPlayer(track: track) {
+                    player.volume = 1.0
+                    player.play()
+                    
+                    startProgressTimer()
+                    
+                    status = .playing
+                    mediaPlayer = player
+                }
+            }else{
+                status = .caching
+                track.cacheSoundDataWithDelegate(self)
+            }
         }
     }
     
@@ -250,6 +254,6 @@ extension NFSpotifyMediaPlayer {
         }
         
         player.stop()
-        status = .stopped
+        status = .paused
     }
 }
