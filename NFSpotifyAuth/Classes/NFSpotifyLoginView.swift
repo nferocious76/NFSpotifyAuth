@@ -50,7 +50,6 @@ public class NFSpotifyLoginView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         self.init()
         
-        translatesAutoresizingMaskIntoConstraints = false
     }
     
     override public func encode(with aCoder: NSCoder) {
@@ -97,7 +96,6 @@ extension NFSpotifyLoginView {
         
         wkWebView.navigationDelegate = self
         wkWebView.layer.cornerRadius = cornerRadius
-        wkWebView.translatesAutoresizingMaskIntoConstraints = false
         pinViewToSelf(view: wkWebView)
         
         setStatusColor(color: NFSpotifyAuthDefault) // default
@@ -113,7 +111,6 @@ extension NFSpotifyLoginView {
         closeButton.setImage(image, for: .normal)
         
         addSubview(closeButton)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
         
         let top = NSLayoutConstraint(item: closeButton, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
         let right = NSLayoutConstraint(item: closeButton, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
