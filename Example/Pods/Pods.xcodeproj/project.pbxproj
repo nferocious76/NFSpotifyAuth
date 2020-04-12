@@ -63,6 +63,7 @@
 		F5C07F012441D7820005C493 /* NFSpotifyAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F002441D7820005C493 /* NFSpotifyAlbum.swift */; };
 		F5C07F032441D7980005C493 /* NFSpotifyArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F022441D7980005C493 /* NFSpotifyArtist.swift */; };
 		F5C07F052441D7F70005C493 /* NFSpotifyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */; };
+		F5C07F072441E4830005C493 /* NFSpotifyTrackMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C07F062441E4830005C493 /* NFSpotifyTrackMedia.swift */; };
 		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536A837D7E616B67849E3249D17A3BF /* Response.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,7 @@
 		F5C07F002441D7820005C493 /* NFSpotifyAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyAlbum.swift; path = NFSpotifyAuth/Classes/NFSpotifyAlbum.swift; sourceTree = "<group>"; };
 		F5C07F022441D7980005C493 /* NFSpotifyArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyArtist.swift; path = NFSpotifyAuth/Classes/NFSpotifyArtist.swift; sourceTree = "<group>"; };
 		F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyImage.swift; path = NFSpotifyAuth/Classes/NFSpotifyImage.swift; sourceTree = "<group>"; };
+		F5C07F062441E4830005C493 /* NFSpotifyTrackMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NFSpotifyTrackMedia.swift; path = NFSpotifyAuth/Classes/NFSpotifyTrackMedia.swift; sourceTree = "<group>"; };
 		F61FF63DBFF70D7859E3000AB1164FDB /* Pods-NFSpotifyAuth_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NFSpotifyAuth_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FB61134B3721F50E3B71B3B4326CD1CE /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		FEE13D798A25F1735571F868997C9A7E /* Pods_NFSpotifyAuth_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFSpotifyAuth_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +357,7 @@
 				2644CEF03D053DBA21D95B68DD05AFE3 /* NFSpotifyProfile.swift */,
 				B1AAE3B613864EF36707E67C4EAA7C36 /* NFSpotifyToken.swift */,
 				F5C07EFE2441D7120005C493 /* NFSpotifyTrack.swift */,
+				F5C07F062441E4830005C493 /* NFSpotifyTrackMedia.swift */,
 				F5C07F002441D7820005C493 /* NFSpotifyAlbum.swift */,
 				F5C07F042441D7F70005C493 /* NFSpotifyImage.swift */,
 				F5C07F022441D7980005C493 /* NFSpotifyArtist.swift */,
@@ -623,6 +626,7 @@
 				F5C07EFF2441D7120005C493 /* NFSpotifyTrack.swift in Sources */,
 				F5C07EFD24418E1A0005C493 /* NFSpotifyHelper.swift in Sources */,
 				F5C07F012441D7820005C493 /* NFSpotifyAlbum.swift in Sources */,
+				F5C07F072441E4830005C493 /* NFSpotifyTrackMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
