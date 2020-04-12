@@ -16,7 +16,6 @@ let SpotifyCallbackURI = "http://api.domain/callback"
 let SpotifyTokenRefreshServiceURL = "http://api.domain/callback/refresh"
 let SpotifyTokenSwapServiceURL = "http://api.domain/callback/swap"
 
-
 class ViewController: UIViewController, NFSpotifyLoginViewDelegate {
 
     @IBOutlet weak var connectButton: UIButton!
@@ -54,6 +53,18 @@ class ViewController: UIViewController, NFSpotifyLoginViewDelegate {
 // MARK: - NFSpotifyLoginViewDelegate
 
 extension ViewController {
+    
+    func spotifyLoginViewDidShow(_ view: NFSpotifyLoginView) {
+        connectButton.isHidden = true
+        connectButton.isEnabled = false
+        
+    }
+    
+    func spotifyLoginViewDidClose(_ view: NFSpotifyLoginView) {
+        connectButton.isHidden = false
+        connectButton.isEnabled = true
+        
+    }
     
     func spotifyLoginView(_ view: NFSpotifyLoginView, didFailWithError error: Error?) {
         print("err: \(error)")
