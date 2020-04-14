@@ -24,7 +24,10 @@
   "resources": "NFSpotifyAuth/Assets/**",
   "dependencies": {
     "Alamofire": [
-
+      "~> 5.1"
+    ],
+    "NFImageView": [
+      "~> 0.2.3"
     ]
   },
   "swift_version": "5.0"

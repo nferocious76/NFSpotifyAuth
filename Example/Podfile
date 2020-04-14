@@ -4,7 +4,8 @@ source 'https://github.com/CocoaPods/Specs.git' #include this if you will be ref
 
 target 'NFSpotifyAuth_Example' do
   pod 'NFSpotifyAuth', :path => '../'
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.1'
+  pod 'NFImageView', '~> 0.2.3'
 
   target 'NFSpotifyAuth_Tests' do
     inherit! :search_paths

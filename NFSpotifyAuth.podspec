@@ -38,5 +38,7 @@ Spotify Authenticator using WebOAuth that won't require SDK. Authentication conf
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-  s.dependency 'Alamofire'
+  s.dependency 'Alamofire', '~> 5.1'
+  s.dependency 'NFImageView', '~> 0.2.3'
+  
 end
