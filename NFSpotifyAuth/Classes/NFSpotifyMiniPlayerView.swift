@@ -7,6 +7,7 @@
 
 import Foundation
 import AVFoundation
+import NFImageView
 
 public protocol NFSpotifyMiniPlayerViewDelegate: NSObjectProtocol {
     
@@ -25,7 +26,7 @@ public class NFSpotifyMiniPlayerView: UIView {
     @IBOutlet weak internal var titleLbl: UILabel!
     @IBOutlet weak internal var detailLbl: UILabel!
     
-    @IBOutlet weak internal var trackImage: UIImageView!
+    @IBOutlet weak internal var trackImage: NFImageView!
     @IBOutlet weak internal var sourceBadge: UIImageView!
     
     @IBOutlet weak internal var playPauseButton: UIButton!
@@ -145,6 +146,8 @@ public class NFSpotifyMiniPlayerView: UIView {
         trackImage.clipsToBounds = true
         trackImage.layer.cornerRadius = 1.0
         trackImage.contentMode = .scaleAspectFill
+        trackImage.loadingType = .progress
+        trackImage.loadingEnabled = true
         
         activityIndicator.isHidden = true
         activityIndicator.hidesWhenStopped = true
@@ -205,6 +208,40 @@ extension NFSpotifyMiniPlayerView {
         UIGraphicsEndImageContext()
         
         return image
+    }
+    
+    private func loadSpotifyImage(fromURL albumCoverArtURL: String?) {
+        
+        let bundle = Bundle(for: NFSpotifyMiniPlayerView.self)
+        let musicIcon = UIImage(named: "music-icon", in: bundle, compatibleWith: .none)
+        
+        if let albumCoverURL = albumCoverArtURL, let imageURL = URL(string: albumCoverURL) {
+            trackImage.setImage(fromURL: imageURL) { (code, error) in
+                if let _ = error {
+                    self.trackImage.image = musicIcon
+                }
+            }
+        }else{
+            trackImage.image = musicIcon
+        }
+    }
+    
+    private func loadImageFromTrack(_ track: NFSpotifyTrack) {
+        
+        let bundle = Bundle(for: NFSpotifyMiniPlayerView.self)
+        let musicIcon = UIImage(named: "music-icon", in: bundle, compatibleWith: .none)
+        
+        if track.soundType == .musicLibrary, let albumImage = track.albumImage {
+            trackImage.image = albumImage
+        }else if let album = track.album, let largeImageURL = album.largeImageURL, let imageURL = URL(string: largeImageURL) {
+            trackImage.setImage(fromURL: imageURL) { (code, error) in
+                if let _ = error {
+                    self.trackImage.image = musicIcon
+                }
+            }
+        }else{
+            trackImage.image = musicIcon
+        }
     }
 }
 
@@ -277,9 +314,15 @@ extension NFSpotifyMiniPlayerView {
                         self.detailLbl.text = ""
                     }
                 }
+                
+                self.loadImageFromTrack(track)
             }else{
                 self.titleLbl.text = "Select Track"
-                self.detailLbl.text = "Waiting…"
+                self.detailLbl.text = "Music"
+                
+                let bundle = Bundle(for: NFSpotifyMiniPlayerView.self)
+                let musicIcon = UIImage(named: "music-icon", in: bundle, compatibleWith: .none)
+                self.trackImage.image = musicIcon
             }
         }
     }
